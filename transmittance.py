@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 
-img = Image.new('RGBA', (3850, 2300), 'white')
+img = Image.new('RGBA', (3850, 2320), 'white')
 imgD = ImageDraw.Draw(img)
 
 """Делаем ось Х"""
@@ -24,11 +24,11 @@ for a in range(500, 3150, 500):
     imgD.text((a+200, 2130), word, font=font,  fill=(0, 0, 0))
 
 
-text = u'Wavenumber, cm\u207B\u00B9'
+text = 'Wavenumber, cm -\u00B9'
 imgD.text((1550, 2210), text, font=font,  fill=(0, 0, 0))
 
-text = 'Transmittance'
-imgD.text((100, 2210), text, font=font,  fill=(0, 0, 0))
+text = 'Transmittance, %'
+imgD.text((600, 510), text, font=font,  fill=(0, 0, 0))
 
 
 """Делаем ось У"""
@@ -55,5 +55,5 @@ for a in range(300, 2100, 200):
 text = f"%"
 imgD.text((140, 100), text, font=font,  fill=(0, 0, 0))
 
-img.save('poloska.png')
+img.save('.\picture\poloska.png')
 img.show()
