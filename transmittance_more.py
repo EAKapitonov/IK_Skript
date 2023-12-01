@@ -23,11 +23,11 @@ for a in range(500, 3150, 500):
     word = str(4000-a)
     imgD.text((a+150, 2130), word, font=font,  fill=(0, 0, 0))
 
-text = 'Волновое число, cm -\u00B9'
+text = 'Wavenumber, cm -\u00B9'
 imgD.text((1550, 2200), text, font=font,  fill=(0, 0, 0))
 
-text = 'Отн. единиц'
-imgD.text((100, 2200), text, font=font,  fill=(0, 0, 0))
+text = 'Transmittance (a.u.)'
+imgD.text((500, 500), text, font=font,  fill=(0, 0, 0))
 
 
 """Делаем ось У"""
