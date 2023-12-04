@@ -40,6 +40,7 @@ while e == 1:
     else:
         m = int(m)
         count = 0
+        l = float(input("Введите длину стрелки от 1 и выше"))
         with open('sample.csv', 'r', encoding='utf-8') as f:
             csvreader = csv.reader(f)
             for row in csvreader:
@@ -52,9 +53,10 @@ while e == 1:
                     if x == m:
                         h = float(row[1]) * 20
                         h = int(h)
-                        imgD.line((4305 - x, 2100 - h, 4305 - x, 2200 - h), fill=(0, 0, 0), width=3)
+                        imgD.line((4305 - x, 2100 - h, 4305 - x, 2200 + 40*l - h), fill=(0, 0, 0), width=3)
                         word = str(x)
-                        imgD.text((4240 - x, 2200 - h), word, font=font, fill=(0, 0, 0))
+                        imgD.text((4240 - x, 2200 + 40*l - h), word, font=font, fill=(0, 0, 0))
+                        break
 
 img.save('point.png')
 img.show()

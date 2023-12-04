@@ -51,6 +51,7 @@ for c in range(1, 1+int(count_graff)):
         else:
             m = int(m)
             count = 0
+            l = float(input("Введите длину стрелки от 1 и выше"))
             with open(f'sample{c}.csv', 'r', encoding='utf-8') as f:
                 csvreader = csv.reader(f)
                 for row in csvreader:
@@ -63,9 +64,9 @@ for c in range(1, 1+int(count_graff)):
                         if x == m:
                             h = float(row[1]) * 20 / k2
                             h = int(h)
-                            imgD.line((4255 - x, 100 + 2000/k2 - h + (c-1)*100*k, 4255 - x, 200 + 2000/k2 - h + (c-1)*100*k), fill=(color[color_graff]), width=3)
+                            imgD.line((4255 - x, 100 + 2000/k2 - h + (c-1)*100*k, 4255 - x, 200 + 2000/k2 - h + (c-1)*100*k + 40*l), fill=(color[color_graff]), width=3)
                             word = str(x)
-                            imgD.text((4215 - x, 200 + 2000/k2 - h + (c-1)*100*k), word, font=font, fill=(0, 0, 0))
+                            imgD.text((4215 - x, 200 + 2000/k2 - h + (c-1)*100*k + 40*l), word, font=font, fill=(0, 0, 0))
 
 img.save('point.png')
 img.show()
